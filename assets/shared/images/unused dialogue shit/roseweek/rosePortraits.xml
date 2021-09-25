@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="rosePortraits.png">
+	<!-- Created with Adobe Animate version 18.0.0.107 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Rose crazy0000" x="0" y="0" width="318" height="546"/>
+	<SubTexture name="Rose nice0000" x="318" y="0" width="318" height="546"/>
+</TextureAtlas>
