@@ -415,13 +415,13 @@ class TitleState extends MusicBeatState
 				// credTextShit.text = "FNF";
 				// credTextShit.screenCenter();
 				case 13:
-					addMoreText('FNF');
+					addMoreText('Spotlight');
 				// credTextShit.visible = true;
 				case 14:
-					addMoreText('VS');
-				// credTextShit.text += '\VS';
+					addMoreText('Waves');
+				// credTextShit.text += '\Waves';
 				case 15:
-					addMoreText('Rose'); // credTextShit.text += '\nRose';
+					addMoreText('DEMO ONE'); // credTextShit.text += '\nDEMO ONE';
 
 				case 16:
 					skipIntro();

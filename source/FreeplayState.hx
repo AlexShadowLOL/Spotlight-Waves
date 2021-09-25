@@ -23,7 +23,7 @@ class FreeplayState extends MusicBeatState
 {
 	//Character head icons for your songs
 	static var songsHeads:Array<Dynamic> = [
-		['rose1', 'rose1', 'rose2']							//Week 1
+		['star']							//Week 1
 	];
 
 	var songs:Array<SongMetadata> = [];
@@ -102,6 +102,7 @@ class FreeplayState extends MusicBeatState
 			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false);
 			songText.isMenuItem = true;
 			songText.targetY = i;
+			songText.screenCenter(X);
 			grpSongs.add(songText);
 
 			var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
@@ -113,7 +114,6 @@ class FreeplayState extends MusicBeatState
 
 			// songText.x += 40;
 			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
-			// songText.screenCenter(X);
 		}
 
 		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);

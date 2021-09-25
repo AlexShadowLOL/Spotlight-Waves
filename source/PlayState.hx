@@ -580,38 +580,27 @@ class PlayState extends MusicBeatState
 				stageCurtains.updateHitbox();
 				add(stageCurtains);
 
-			case 'tea-party' | 'thorns-of-roses':
-				defaultCamZoom = 0.8;
-				curStage = 'building';
-				var bg:BGSprite = new BGSprite('buildingbg', -600, -200, 0.9, 0.9);
+			case 'swing' | 'flow':
+				defaultCamZoom = 0.9;
+				curStage = 'park';
+				var bg:BGSprite = new BGSprite('park', -600, -200, 0.9, 0.9);
 				add(bg);
 
-				var stageFront:BGSprite = new BGSprite('buildingfloor', -650, 600, 0.9, 0.9);
+				var stageFront:BGSprite = new BGSprite('sidewalk', -650, 600, 0.9, 0.9);
 				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
 				stageFront.updateHitbox();
 				add(stageFront);				
 
-			case 'nyctophobia':
-				defaultCamZoom = 0.8;
-				curStage = 'buildingerror';
-				var bg:BGSprite = new BGSprite('buildingbgerror', -600, -200, 0.9, 0.9);
+			case 'last-battle':
+				defaultCamZoom = 0.9;
+				curStage = 'parknight';
+				var bg:BGSprite = new BGSprite('parknight', -600, -200, 0.9, 0.9);
 				add(bg);
 
-				var stageFront:BGSprite = new BGSprite('buildingfloorerror', -650, 600, 0.9, 0.9);
+				var stageFront:BGSprite = new BGSprite('sidewalknight', -650, 600, 0.9, 0.9);
 				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
 				stageFront.updateHitbox();
-				add(stageFront);				
-
-			case 'darkness':
-				defaultCamZoom = 0.8;
-				curStage = 'error';
-				var bg:BGSprite = new BGSprite('errorbg', -600, -200, 0.9, 0.9);
-				add(bg);
-
-				var stageFront:BGSprite = new BGSprite('errorfloor', -650, 600, 0.9, 0.9);
-				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
-				stageFront.updateHitbox();
-				add(stageFront);				
+				add(stageFront);								
 		}
 
 		backgroundGroup = new FlxTypedGroup<FlxSprite>();
@@ -627,6 +616,8 @@ class PlayState extends MusicBeatState
 					gfVersion = 'gf-christmas';
 				case 'school' | 'schoolEvil':
 					gfVersion = 'gf-pixel';
+				case 'parknight':
+					gfVersion = 'gfdark';
 				default:
 					gfVersion = 'gf';
 			}
