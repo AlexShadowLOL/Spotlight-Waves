@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-111,
+				-93
+			],
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Mark Left"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-96,
+				-96
+			],
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Mark Down"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-109,
+				-71
+			],
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Mark Up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-106,
+				-95
+			],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Mark Right"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-109,
+				-83
+			],
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Mark Idle"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Mark_Afternoon_assets",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "mark",
+	"flip_x": false,
+	"healthbar_colors": [
+		255,
+		0,
+		0
+	],
+	"camera_position": [
+		-40,
+		100
+	],
+	"sing_duration": 4,
+	"scale": 0.9
+}

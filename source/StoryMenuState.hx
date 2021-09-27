@@ -27,6 +27,7 @@ class StoryMenuState extends MusicBeatState
 	// defaults to True
 	public static var weekUnlocked:Array<Bool> = [
 		true,	//Week 0
+		true,
 		true
 	];
 
@@ -34,19 +35,22 @@ class StoryMenuState extends MusicBeatState
 	// ['Left character', 'Center character', 'Right character']
 	var weekCharacters:Array<Dynamic> = [
 		['dad', 'bf', 'gf'],
+		['dad', 'bf', 'gf'],
 		['dad', 'bf', 'gf']
 	];
 
 	//The week's name, displayed on top-right
 	var weekNames:Array<String> = [
 		"Practicing",
-		"Thorns And Fears"
+		"Park",
+		"Bridge"
 	];
 
 	//Background asset name, the background files are stored on assets/preload/menubackgrounds/
 	var weekBackground:Array<String> = [		
 		'stage',
-		'building'
+		'park',
+		'bridge'
 	];
 	
 	var scoreText:FlxText;

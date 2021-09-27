@@ -421,7 +421,7 @@ class TitleState extends MusicBeatState
 					addMoreText('Waves');
 				// credTextShit.text += '\Waves';
 				case 15:
-					addMoreText('DEMO ONE'); // credTextShit.text += '\nDEMO ONE';
+					addMoreText('DEMO'); // credTextShit.text += '\nDEMO';
 
 				case 16:
 					skipIntro();

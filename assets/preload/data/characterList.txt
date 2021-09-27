@@ -1,6 +1,12 @@
 bf
+bfafternoon
 bfdark
 gf
+gfafternoon
 gfdark
 star
+starafternoon
 stardark
+mark
+markafternoon
+markdark

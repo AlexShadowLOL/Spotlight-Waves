@@ -23,7 +23,8 @@ class FreeplayState extends MusicBeatState
 {
 	//Character head icons for your songs
 	static var songsHeads:Array<Dynamic> = [
-		['star']							//Week 1
+		['star'],							//Week 1
+		['mark']
 	];
 
 	var songs:Array<SongMetadata> = [];
@@ -102,7 +103,7 @@ class FreeplayState extends MusicBeatState
 			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false);
 			songText.isMenuItem = true;
 			songText.targetY = i;
-			songText.screenCenter(X);
+			songText.offset.x -= 250; // i tried my best -Z
 			grpSongs.add(songText);
 
 			var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
@@ -110,9 +111,10 @@ class FreeplayState extends MusicBeatState
 
 			// using a FlxGroup is too much fuss!
 			iconArray.push(icon);
+            icon.offset.x -= 250;
 			add(icon);
 
-			// songText.x += 40;
+			// songText.x += 40;			
 			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
 		}
 
@@ -371,6 +373,7 @@ class FreeplayState extends MusicBeatState
 
 			if (item.targetY == 0)
 			{
+				item.screenCenter(X);
 				item.alpha = 1;
 				// item.setGraphicSize(Std.int(item.width));
 			}

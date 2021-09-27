@@ -39,7 +39,7 @@ import openfl.utils.ByteArray;
 import openfl.utils.Assets as OpenFlAssets;
 #if MODS_ALLOWED
 import sys.io.File;
-import sys.FileSystem;
+import sys.FileSystem; 
 #end
 
 using StringTools;
@@ -51,7 +51,9 @@ class ChartingState extends MusicBeatState
 		'',
 		'1 - Alt Animation',
 		'2 - Hey!',
-		'3 - Hurt Note'
+		'3 - Hurt Note',
+		'4 - Star Note',
+		'5 - InstaKill Note'
 	];
 
 	private static var eventStuff:Array<Dynamic> =

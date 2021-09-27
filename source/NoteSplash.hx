@@ -34,8 +34,14 @@ class NoteSplash extends FlxSprite
 			if(PlayState.SONG.splashSkin != null && PlayState.SONG.splashSkin.length > 0) skin = PlayState.SONG.splashSkin;
 
 			switch(noteType) {
-				case 3: //Hurt note
+				case 3: // Hurt Note
 					loadAnims('HURT' + skin);
+					
+				case 4: // Star Note
+					loadAnims('STAR' + skin);
+					
+				case 5: // Instakill Note
+					loadAnims('INSTAKILL' + skin);
 
 				default:
 					loadAnims(skin);
@@ -49,6 +55,16 @@ class NoteSplash extends FlxSprite
 				colorSwap.saturation = 0;
 				colorSwap.brightness = 0;
 			
+			case 4:
+				colorSwap.hue = 0;
+				colorSwap.saturation = 0;
+				colorSwap.brightness = 0;
+			
+			case 5:
+				colorSwap.hue = 0;
+				colorSwap.saturation = 0;
+				colorSwap.brightness = 0;
+							
 			default:
 				colorSwap.hue = ClientPrefs.arrowHSV[note % 4][0] / 360;
 				colorSwap.saturation = ClientPrefs.arrowHSV[note % 4][1] / 100;

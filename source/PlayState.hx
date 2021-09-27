@@ -580,8 +580,8 @@ class PlayState extends MusicBeatState
 				stageCurtains.updateHitbox();
 				add(stageCurtains);
 
-			case 'swing' | 'flow':
-				defaultCamZoom = 0.9;
+			case 'swing':
+				defaultCamZoom = 0.8;
 				curStage = 'park';
 				var bg:BGSprite = new BGSprite('park', -600, -200, 0.9, 0.9);
 				add(bg);
@@ -591,8 +591,19 @@ class PlayState extends MusicBeatState
 				stageFront.updateHitbox();
 				add(stageFront);				
 
+			case 'flow':
+				defaultCamZoom = 0.8;
+				curStage = 'parkafternoon';
+				var bg:BGSprite = new BGSprite('parkafternoon', -600, -200, 0.9, 0.9);
+				add(bg);
+
+				var stageFront:BGSprite = new BGSprite('sidewalkafternoon', -650, 600, 0.9, 0.9);
+				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+				stageFront.updateHitbox();
+				add(stageFront);	
+
 			case 'last-battle':
-				defaultCamZoom = 0.9;
+				defaultCamZoom = 0.8;
 				curStage = 'parknight';
 				var bg:BGSprite = new BGSprite('parknight', -600, -200, 0.9, 0.9);
 				add(bg);
@@ -600,7 +611,40 @@ class PlayState extends MusicBeatState
 				var stageFront:BGSprite = new BGSprite('sidewalknight', -650, 600, 0.9, 0.9);
 				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
 				stageFront.updateHitbox();
-				add(stageFront);								
+				add(stageFront);		
+
+			case 'wildflowers':
+				defaultCamZoom = 0.8;
+				curStage = 'bridge';
+				var bg:BGSprite = new BGSprite('bridge', -600, -200, 0.9, 0.9);
+				add(bg);
+
+				var stageFront:BGSprite = new BGSprite('bridgefloor', -650, 600, 0.9, 0.9);
+				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+				stageFront.updateHitbox();
+				add(stageFront);				
+
+			case 'your-side':
+				defaultCamZoom = 0.8;
+				curStage = 'bridgeafternoon';
+				var bg:BGSprite = new BGSprite('bridgeafternoon', -600, -200, 0.9, 0.9);
+				add(bg);
+
+				var stageFront:BGSprite = new BGSprite('bridgefloorafternoon', -650, 600, 0.9, 0.9);
+				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+				stageFront.updateHitbox();
+				add(stageFront);	
+
+			case 'highway':
+				defaultCamZoom = 0.8;
+				curStage = 'bridgenight';
+				var bg:BGSprite = new BGSprite('bridgenight', -600, -200, 0.9, 0.9);
+				add(bg);
+
+				var stageFront:BGSprite = new BGSprite('bridgefloornight', -650, 600, 0.9, 0.9);
+				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+				stageFront.updateHitbox();
+				add(stageFront);					
 		}
 
 		backgroundGroup = new FlxTypedGroup<FlxSprite>();
@@ -616,8 +660,14 @@ class PlayState extends MusicBeatState
 					gfVersion = 'gf-christmas';
 				case 'school' | 'schoolEvil':
 					gfVersion = 'gf-pixel';
+				case 'parkafternoon':
+					gfVersion = 'gfafternoon';
 				case 'parknight':
 					gfVersion = 'gfdark';
+				case 'bridgeafternoon':
+					gfVersion = 'gfafternoon';
+				case 'bridgenight':
+					gfVersion = 'gfdark';	
 				default:
 					gfVersion = 'gf';
 			}
@@ -3181,7 +3231,7 @@ class PlayState extends MusicBeatState
 		if (!note.wasGoodHit)
 		{
 			switch(note.noteType) {
-				case 3: //Hurt note
+				case 3: // Hurt Note
 					if(cpuControlled) return;
 
 					if(!boyfriend.stunned)
@@ -3214,6 +3264,10 @@ class PlayState extends MusicBeatState
 						}
 					}
 					return;
+				case 4: // Star Note
+					health += 5;
+				case 5: // InstaKill Note
+					health -= 500;	
 			}
 
 			if (!note.isSustainNote)

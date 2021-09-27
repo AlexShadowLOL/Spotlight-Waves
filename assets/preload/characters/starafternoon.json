@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-32,
+				-240
+			],
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Star Left"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-94,
+				-381
+			],
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Star Down"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-59,
+				-201
+			],
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Star Up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-76,
+				-304
+			],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Star Right"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				3,
+				-199
+			],
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Star Idle"
+		},
+		{
+			"offsets": [
+				-30,
+				-196
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "hey",
+			"indices": [],
+			"name": "Star Hey"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Star_Afternoon_assets",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "star",
+	"flip_x": false,
+	"healthbar_colors": [
+		255,
+		0,
+		146
+	],
+	"camera_position": [
+		-50,
+		300
+	],
+	"sing_duration": 4,
+	"scale": 1
+}
