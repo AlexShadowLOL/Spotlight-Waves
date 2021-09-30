@@ -3,6 +3,7 @@ package;
 #if desktop
 import Discord.DiscordClient;
 #end
+
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
@@ -23,7 +24,7 @@ using StringTools;
 
 class MainMenuState extends MusicBeatState
 {
-	public static var spotlightWavesVersion:String = '0.2.0';
+	public static var spotlightWavesVersion:String = '0.3.0';
 	public static var psychEngineVersion:String = '0.3.2'; //This is also used for Discord RPC
 	public static var curSelected:Int = 0;
 
@@ -34,6 +35,8 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = ['story_mode', 'freeplay', #if ACHIEVEMENTS_ALLOWED 'awards', #end 'credits', #if !switch 'donate', #end 'options'];
 
 	var magenta:FlxSprite;
+	var logoBl:FlxSprite;
+	var menuLines:FlxSprite;
 	var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
 
@@ -41,7 +44,7 @@ class MainMenuState extends MusicBeatState
 	{
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
+		DiscordClient.changePresence("In the Main Menu", null);
 		#end
 
 		camGame = new FlxCamera();
@@ -80,10 +83,27 @@ class MainMenuState extends MusicBeatState
 		magenta.antialiasing = ClientPrefs.globalAntialiasing;
 		magenta.color = 0xFFfd719b;
 		add(magenta);
-		// magenta.scrollFactor.set();
+
+		menuLines = new FlxSprite(-80).loadGraphic(Paths.image('menuLines'));
+		menuLines.scrollFactor.set(0, yScroll);
+		menuLines.setGraphicSize(Std.int(menuLines.width * 1.175));
+		menuLines.screenCenter();
+		menuLines.updateHitbox();
+		menuLines.antialiasing = ClientPrefs.globalAntialiasing;
+		add(menuLines);
+ 
+		logoBl = new FlxSprite(1500, -120);
+		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
+		logoBl.scrollFactor.set(0, yScroll);
+		logoBl.antialiasing = ClientPrefs.globalAntialiasing;
+		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
+		logoBl.animation.play('bump');
+		logoBl.scale.set(0.7, 0.7);
+		logoBl.updateHitbox();
+		add(logoBl);
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
-		add(menuItems);
+		add(menuItems);		
 
 		for (i in 0...optionShit.length)
 		{
@@ -101,7 +121,7 @@ class MainMenuState extends MusicBeatState
 			if(optionShit.length < 6) scr = 0;
 			menuItem.scrollFactor.set(0, scr);
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
+			// menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
 			menuItem.updateHitbox();
 		}
 
@@ -183,7 +203,7 @@ class MainMenuState extends MusicBeatState
 			{
 				if (optionShit[curSelected] == 'donate')
 				{
-					CoolUtil.browserLoad('https://ninja-muffin24.itch.io/funkin');
+					CoolUtil.browserLoad('https://twitter.com/AlexDaShadow');
 				}
 				else
 				{
@@ -235,7 +255,7 @@ class MainMenuState extends MusicBeatState
 		menuItems.forEach(function(spr:FlxSprite)
 		{
 			spr.screenCenter(X);
-			spr.x -= 280;
+			spr.x -= 300;
 		});
 	}
 

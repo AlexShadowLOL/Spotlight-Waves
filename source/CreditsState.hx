@@ -43,6 +43,7 @@ class CreditsState extends MusicBeatState
 	];
 
 	var bg:FlxSprite;
+	var menuLines:FlxSprite;
 	var descText:FlxText;
 	var intendedColor:Int;
 	var colorTween:FlxTween;
@@ -51,11 +52,16 @@ class CreditsState extends MusicBeatState
 	{
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
+		DiscordClient.changePresence("In The Credits Menu", null);
 		#end
 
 		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
+
+		menuLines = new FlxSprite().loadGraphic(Paths.image('lineLeft'));
+		menuLines.antialiasing = ClientPrefs.globalAntialiasing;
+		add(menuLines);
 
 		grpOptions = new FlxTypedGroup<Alphabet>();
 		add(grpOptions);

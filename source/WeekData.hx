@@ -7,7 +7,8 @@ class WeekData {
 	public static var songsNames:Array<Dynamic> = [
 		['Tutorial'],								//Tutorial, this one isn't added to Freeplay, instead it is added from assets/preload/freeplaySonglist.txt
 		['Swing', 'Flow', 'Last-Battle'],		//Week 1
-		['Wildflowers', 'Your-Side', 'Highway']
+		['Wildflowers', 'Your-Side', 'Highway'],
+		['Catch-The-Wind', 'On-My-Own', 'End-Of-Road']
 	];
 
 	// Custom week number, used for your week's score not being overwritten by a new vanilla week when the game updates
@@ -16,6 +17,7 @@ class WeekData {
 	public static var weekNumber:Array<Dynamic> = [
 		null,	//Tutorial
 		null,	//Week 1
+		null,
 		null
 	];
 
@@ -29,6 +31,7 @@ class WeekData {
 	public static var loadDirectory:Array<String> = [
 		'tutorial', //Tutorial loads "tutorial" folder on assets/
 		null,	//Week 1
+		null,
 		null
 	];
 
@@ -39,6 +42,7 @@ class WeekData {
 	public static var weekResetName:Array<String> = [
 		"Tutorial",
 		null,	//Week 1
+		null,
 		null
 	];
 

@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-62,
+				-160
+			],
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Evelyn Left"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-63,
+				-241
+			],
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Evelyn Down"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-159,
+				-131
+			],
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Evelyn Up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-76,
+				-164
+			],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Evelyn Right"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-119,
+				-139
+			],
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Evelyn Idle"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Evelyn_assets",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "evelyn",
+	"flip_x": false,
+	"healthbar_colors": [
+		175,
+		0,
+		255
+	],
+	"camera_position": [
+		-110,
+		170
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

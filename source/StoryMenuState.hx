@@ -28,12 +28,14 @@ class StoryMenuState extends MusicBeatState
 	public static var weekUnlocked:Array<Bool> = [
 		true,	//Week 0
 		true,
-		true
+		true,
+		true,
 	];
 
 	//It works like this:
 	// ['Left character', 'Center character', 'Right character']
 	var weekCharacters:Array<Dynamic> = [
+		['dad', 'bf', 'gf'],
 		['dad', 'bf', 'gf'],
 		['dad', 'bf', 'gf'],
 		['dad', 'bf', 'gf']
@@ -43,14 +45,16 @@ class StoryMenuState extends MusicBeatState
 	var weekNames:Array<String> = [
 		"Practicing",
 		"Park",
-		"Bridge"
+		"Bridge",
+		"Limo"
 	];
 
 	//Background asset name, the background files are stored on assets/preload/menubackgrounds/
 	var weekBackground:Array<String> = [		
 		'stage',
 		'park',
-		'bridge'
+		'bridge',
+		'limo'
 	];
 	
 	var scoreText:FlxText;
@@ -111,7 +115,7 @@ class StoryMenuState extends MusicBeatState
 
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Story Menu", null);
+		DiscordClient.changePresence("In the Story Mode Menu", null);
 		#end
 
 		for (i in 0...WeekData.songsNames.length)

@@ -23,8 +23,9 @@ class FreeplayState extends MusicBeatState
 {
 	//Character head icons for your songs
 	static var songsHeads:Array<Dynamic> = [
-		['star'],							//Week 1
-		['mark']
+		['star'],						
+		['mark'],	
+		['evelyn']					
 	];
 
 	var songs:Array<SongMetadata> = [];
@@ -48,6 +49,7 @@ class FreeplayState extends MusicBeatState
 	public static var coolColors:Array<Int> = [];
 
 	var bg:FlxSprite;
+	var menuLines:FlxSprite;
 	var intendedColor:Int;
 	var colorTween:FlxTween;
 
@@ -93,7 +95,12 @@ class FreeplayState extends MusicBeatState
 		// LOAD CHARACTERS
 
 		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
+
+	    menuLines = new FlxSprite().loadGraphic(Paths.image('lineLeft'));
+		menuLines.antialiasing = ClientPrefs.globalAntialiasing;
+		add(menuLines);
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
@@ -111,10 +118,9 @@ class FreeplayState extends MusicBeatState
 
 			// using a FlxGroup is too much fuss!
 			iconArray.push(icon);
-            icon.offset.x -= 250;
+			icon.offset.x -= 250;
 			add(icon);
 
-			// songText.x += 40;			
 			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
 		}
 
@@ -373,7 +379,6 @@ class FreeplayState extends MusicBeatState
 
 			if (item.targetY == 0)
 			{
-				item.screenCenter(X);
 				item.alpha = 1;
 				// item.setGraphicSize(Std.int(item.width));
 			}
