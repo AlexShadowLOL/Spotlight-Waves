@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="starTitleScreen.png">
+	<!-- Created with Adobe Animate version 18.0.0.107 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Star Idle0000" x="0" y="0" width="543" height="688"/>
+	<SubTexture name="Star Idle0001" x="0" y="688" width="543" height="688"/>
+	<SubTexture name="Star Idle0002" x="0" y="1376" width="543" height="688"/>
+	<SubTexture name="Star Idle0003" x="543" y="0" width="543" height="688"/>
+	<SubTexture name="Star Idle0004" x="1086" y="0" width="543" height="688"/>
+	<SubTexture name="Star Idle0005" x="1629" y="0" width="543" height="688"/>
+	<SubTexture name="Star Idle0006" x="543" y="688" width="543" height="688"/>
+	<SubTexture name="Star Idle0007" x="543" y="1376" width="543" height="688"/>
+	<SubTexture name="Star Idle0008" x="1086" y="688" width="543" height="688"/>
+	<SubTexture name="Star Idle0009" x="1086" y="688" width="543" height="688"/>
+	<SubTexture name="Star Idle0010" x="1086" y="688" width="543" height="688"/>
+	<SubTexture name="Star Idle0011" x="1086" y="688" width="543" height="688"/>
+</TextureAtlas>

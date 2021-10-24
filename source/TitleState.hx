@@ -123,7 +123,11 @@ class TitleState extends MusicBeatState
 		#end
 	}
 
+	var bg:FlxSprite;
 	var logoBl:FlxSprite;
+	var star:FlxSprite;
+	var bottomLine:FlxSprite;
+	var topLine:FlxSprite;
 	var gfDance:FlxSprite;
 	var danceLeft:Bool = false;
 	var titleText:FlxSprite;
@@ -164,20 +168,44 @@ class TitleState extends MusicBeatState
 		Conductor.changeBPM(102);
 		persistentUpdate = true;
 
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('bgTitleScreen'));
+		bg = new FlxSprite().loadGraphic(Paths.image('titlescreen/bgTitleScreen'));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
+		bg.updateHitbox();
 		add(bg);
 
-		logoBl = new FlxSprite(100, 0);
-		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
+		// note for future self (and for beginners too): to change the positions of the sprites correctly,
+		// use the reference below.
+
+        // left.x = "smaller number" right.x = "bigger number" down.y = "smaller number" up.y = "bigger number"
+
+		star = new FlxSprite(0, 100);
+		star.frames = Paths.getSparrowAtlas('titlescreen/starTitleScreen');
+		star.antialiasing = ClientPrefs.globalAntialiasing;
+		star.animation.addByPrefix('idle', 'Star Idle', 24);
+		star.animation.play('idle');
+		star.updateHitbox();
+		add(star);
+
+		bottomLine = new FlxSprite().loadGraphic(Paths.image('titlescreen/bottomLine'));
+		bottomLine.antialiasing = ClientPrefs.globalAntialiasing;
+		bottomLine.updateHitbox();
+		add(bottomLine);
+
+		topLine = new FlxSprite().loadGraphic(Paths.image('titlescreen/topLine'));
+		topLine.antialiasing = ClientPrefs.globalAntialiasing;
+		topLine.updateHitbox();
+		add(topLine);
+
+		logoBl = new FlxSprite(450, 0);
+		logoBl.frames = Paths.getSparrowAtlas('titlescreen/logoBumpin');
 		logoBl.antialiasing = ClientPrefs.globalAntialiasing;
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
 		logoBl.animation.play('bump');
 		logoBl.updateHitbox();
 		add(logoBl);
 
-		titleText = new FlxSprite(100, FlxG.height * 0.8);
-		titleText.frames = Paths.getSparrowAtlas('titleEnter');
+		titleText = new FlxSprite(125, FlxG.height * 0.8);
+		titleText.frames = Paths.getSparrowAtlas('titlescreen/titleEnter');
 		titleText.animation.addByPrefix('idle', "Press Enter to Begin", 24);
 		titleText.animation.addByPrefix('press', "ENTER PRESSED", 24);
 		titleText.antialiasing = ClientPrefs.globalAntialiasing;
@@ -336,6 +364,9 @@ class TitleState extends MusicBeatState
 	{
 		super.beatHit();
 
+		if(star != null) 
+			star.animation.play('idle');
+
 		if(logoBl != null) 
 			logoBl.animation.play('bump');
 
@@ -353,49 +384,41 @@ class TitleState extends MusicBeatState
 			{
 				case 1:
 					createCoolText(['Psych Engine by'], 45);
-				// credTextShit.visible = true;
+					
 				case 3:
 					addMoreText('Shadow Mario', 45);
 					addMoreText('RiverOaken', 45);
-				// credTextShit.text += '\npresent...';
-				// credTextShit.addText();
+
 				case 4:
 					deleteCoolText();
-				// credTextShit.visible = false;
-				// credTextShit.text = 'In association \nwith';
-				// credTextShit.screenCenter();
+
 				case 5:
 					createCoolText(['This is a mod to'], -60);
 				case 7:
-					addMoreText('This game right below lol', -60);
-					logoSpr.visible = true;
-				// credTextShit.text += '\nNewgrounds';
+					addMoreText('Friday Night Funkin', -60);
+					logoSpr.visible = false;
+
 				case 8:
 					deleteCoolText();
 					logoSpr.visible = false;
-				// credTextShit.visible = false;
 
-				// credTextShit.text = 'Shoutouts To Deez Nuts';
-				// credTextShit.screenCenter();
 				case 9:
 					createCoolText([curWacky[0]]);
-				// credTextShit.visible = true;
+
 				case 11:
 					addMoreText(curWacky[1]);
-				// credTextShit.text += '\nlmao';
+
 				case 12:
 					deleteCoolText();
-				// credTextShit.visible = false;
-				// credTextShit.text = "FNF";
-				// credTextShit.screenCenter();
+
 				case 13:
-					addMoreText('Spotlight');
-				// credTextShit.visible = true;
+					addMoreText('FNF');
+
 				case 14:
-					addMoreText('Waves');
-				// credTextShit.text += '\Waves';
+					addMoreText('Spotlight');
+
 				case 15:
-					addMoreText('DEMO'); // credTextShit.text += '\nDEMO';
+					addMoreText('Waves');
 
 				case 16:
 					skipIntro();

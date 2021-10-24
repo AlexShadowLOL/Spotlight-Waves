@@ -106,6 +106,7 @@ class PauseSubState extends MusicBeatSubstate
 			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, menuItems[i], true, false);
 			songText.isMenuItem = true;
 			songText.targetY = i;
+			songText.offset.x -= 250; // i tried my best -Z
 			grpMenuShit.add(songText);
 		}
 

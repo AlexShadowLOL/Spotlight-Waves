@@ -55,11 +55,11 @@ class CreditsState extends MusicBeatState
 		DiscordClient.changePresence("In The Credits Menu", null);
 		#end
 
-		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		bg = new FlxSprite().loadGraphic(Paths.image('menubg/menuDesat'));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 
-		menuLines = new FlxSprite().loadGraphic(Paths.image('lineLeft'));
+		menuLines = new FlxSprite().loadGraphic(Paths.image('menubg/lineLeft'));
 		menuLines.antialiasing = ClientPrefs.globalAntialiasing;
 		add(menuLines);
 

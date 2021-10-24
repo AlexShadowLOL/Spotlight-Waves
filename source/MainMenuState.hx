@@ -61,7 +61,7 @@ class MainMenuState extends MusicBeatState
 		persistentUpdate = persistentDraw = true;
 
 		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
-		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
+		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menubg/menuBG'));
 		bg.scrollFactor.set(0, yScroll);
 		bg.setGraphicSize(Std.int(bg.width * 1.175));
 		bg.updateHitbox();
@@ -74,7 +74,7 @@ class MainMenuState extends MusicBeatState
 		add(camFollow);
 		add(camFollowPos);
 
-		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
+		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menubg/menuDesat'));
 		magenta.scrollFactor.set(0, yScroll);
 		magenta.setGraphicSize(Std.int(magenta.width * 1.175));
 		magenta.updateHitbox();
@@ -84,24 +84,14 @@ class MainMenuState extends MusicBeatState
 		magenta.color = 0xFFfd719b;
 		add(magenta);
 
-		menuLines = new FlxSprite(-80).loadGraphic(Paths.image('menuLines'));
+		menuLines = new FlxSprite(-80).loadGraphic(Paths.image('menubg/lineLeft'));
 		menuLines.scrollFactor.set(0, yScroll);
 		menuLines.setGraphicSize(Std.int(menuLines.width * 1.175));
 		menuLines.screenCenter();
 		menuLines.updateHitbox();
 		menuLines.antialiasing = ClientPrefs.globalAntialiasing;
 		add(menuLines);
- 
-		logoBl = new FlxSprite(1500, -120);
-		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
-		logoBl.scrollFactor.set(0, yScroll);
-		logoBl.antialiasing = ClientPrefs.globalAntialiasing;
-		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
-		logoBl.animation.play('bump');
-		logoBl.scale.set(0.7, 0.7);
-		logoBl.updateHitbox();
-		add(logoBl);
-
+		
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);		
 
